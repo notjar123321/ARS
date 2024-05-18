@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App">
+   <children>
+      <BorderPane layoutY="100.0" prefHeight="40.0" prefWidth="200.0">
+         <left>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Income" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Text>
+         </left>
+         <right>
+            <TextField fx:id="incomeField" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <BorderPane layoutY="140.0" prefHeight="40.0" prefWidth="200.0">
+         <left>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Loan Amount" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Text>
+         </left>
+         <right>
+            <TextField fx:id="loanAmountField" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <BorderPane layoutY="180.0" prefHeight="40.0" prefWidth="200.0">
+         <left>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Interest Rate" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Text>
+         </left>
+         <right>
+            <TextField fx:id="interestField" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <Button layoutX="73.0" layoutY="274.0" mnemonicParsing="false" onAction="#newFile" text="New Loan Tracker" />
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" style="-fx-view-order: 9;">
+         <image>
+            <Image url="@../../../Downloads/background.gif" />
+         </image>
+      </ImageView>
+      <BorderPane layoutX="2.0" layoutY="220.0" prefHeight="40.0" prefWidth="200.0">
+         <left>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Expenses" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Text>
+         </left>
+         <right>
+            <TextField fx:id="monthlyExpensesField" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <MenuBar layoutY="1.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open File" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Text fx:id="remainingDebt" fill="WHITE" layoutX="20.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remaining Payment: ">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <BorderPane layoutY="60.0" prefHeight="40.0" prefWidth="200.0">
+         <left>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Name of Tracker" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+         </left>
+         <right>
+            <TextField fx:id="nameField" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <Text fx:id="loanName" fill="WHITE" layoutX="300.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Loan">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <BorderPane layoutX="23.0" layoutY="346.0" prefHeight="40.0" prefWidth="200.0">
+         <right>
+            <TextField fx:id="paymentField" onAction="#makePayment" BorderPane.alignment="CENTER" />
+         </right>
+         <left>
+            <Button mnemonicParsing="false" onAction="#makePayment" text="Make Payment" BorderPane.alignment="CENTER" />
+         </left>
+      </BorderPane>
+      <BorderPane fx:id="fileOpenPane" layoutX="200.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: grey;" visible="false">
+         <left>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter File Name" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Text>
+         </left>
+         <center>
+            <TextField fx:id="fileOpener" onAction="#actuallyOpenFile" BorderPane.alignment="CENTER" />
+         </center>
+         <right>
+            <Button mnemonicParsing="false" onAction="#closeFileOpener" text="Close" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+   </children>
+</AnchorPane>
